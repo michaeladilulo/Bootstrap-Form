@@ -31,7 +31,7 @@
 
     <div class="mt-5">
         <form>
-            <strong><p>GENERAL INFORMATION (Items Marked With A * Are Required)</p></strong>
+            <strong><p>GENERAL INFORMATION (Items Marked With A <span class="required-true-color">*</span> Are Required)</p></strong>
         
             <div class="form-group row mb-3">
                 <label for="applicantName" class="col-12 col-md-3 col-form-label">Applicant Name<span class="required-true-color">*</span></label>
@@ -131,7 +131,11 @@
             </div>
 
             <div class="dropdown mt-5 d-flex flex-column">
-                <strong><p>Entity Type (Check most appropriate one.)*</p></strong>
+                <p>Entity Type<span class="required-true-color">*</span>
+                    <span class="helper-icon ml-1" data-tooltip="Select Most Appropriate One">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
                 <div class="d-flex">
                 <button class="btn btn-outline-custom dropdown-toggle col-2 entity-type-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Legal Entities
@@ -255,7 +259,11 @@
             </div>
 
             <div class="dropdown mt-5">
-                <strong><p>Tank Owner/Operator Category (Check all those that apply.)*</p></strong>
+                <p>Tank Owner/Operator Category<span class="required-true-color">*</span>
+                    <span class="helper-icon ml-1" data-tooltip="Choose All That Apply">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
                 <div class="d-flex">
                 <button class="btn btn-outline-custom dropdown-toggle col-2 entity-type-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Tank Owner / Operator Categories
@@ -304,7 +312,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-9 d-flex align-items-center">
-                            <label for="sitefacilityid" class="mr-2 mb-0 col-xl-3"><strong>Site / Facility ID</strong>
+                            <label for="sitefacilityid" class="mr-2 mb-0 col-xl-3">Site / Facility ID
                                 <span class="helper-icon ml-1" data-tooltip="Assigned By Idaho Department of Environmental Quanlity (DEQ)">
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span> 
@@ -333,8 +341,8 @@
             <div class="form-group row mt-5 mb-1">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 col-md-9 d-flex align-items-center">
-                            <label for="landOwnerName" class="mr-2 mb-0 col-xl-3"><strong>Land Owner Name</strong>
+                        <div class="col-12 col-md-10 d-flex align-items-center">
+                            <label for="landOwnerName" class="mr-2 mb-0 col-xl-3">Land Owner Name<span class="required-true-color">*</span>
                             </label>
                             <input type="text" class="form-control form-input" id="street1" required="true">
                         </div>
@@ -345,8 +353,8 @@
             <div class="form-group row mb-1">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 col-md-9 d-flex align-items-center">
-                            <label for="operatorName" class="mr-2 mb-0 col-xl-3"><strong>Operator Name</strong>
+                        <div class="col-12 col-md-10 d-flex align-items-center">
+                            <label for="operatorName" class="mr-2 mb-0 col-xl-3">Operator Name
                                 <span class="helper-icon ml-1" data-tooltip="Please provide Operator Name if different from Land Owner">
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span> 
@@ -360,8 +368,8 @@
             <div class="form-group row mb-5">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12 col-md-9 d-flex align-items-center">
-                            <label for="doingBusinessAs" class="mr-2 mb-0 col-xl-3"><strong>Trade Name / DBA</strong>
+                        <div class="col-12 col-md-10 d-flex align-items-center">
+                            <label for="doingBusinessAs" class="mr-2 mb-0 col-xl-3">Trade Name / DBA<span class="required-true-color">*</span>
                             </label>
                             <input type="text" class="form-control form-input" id="street1" required="true">
                         </div>
@@ -421,7 +429,12 @@
             </div>
 
             <div class="dropdown mt-5 d-flex flex-column">
-                <p> <div class="dropdown mt-5 d-flex flex-column">
+                <p>Tribal Reservations / Trusted Lands*
+                    <span class="helper-icon ml-1" data-tooltip="Select One Of The Following">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
+                <p> <div class="dropdown d-flex flex-column">
                 <div class="d-flex">
                 <button class="btn btn-outline-custom dropdown-toggle col-2 entity-type-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Tribal Reservation / Trusted Lands
@@ -463,9 +476,15 @@
 
             <!-- Petroleum Stored Is For -->
             <div class="dropdown mt-5 d-flex flex-column">
+                <p>Petroleum Stored Is For*
+                    <span class="helper-icon ml-1" data-tooltip="Select One Of The Following">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
                 <div class="d-flex">
                 <button class="btn btn-outline-custom dropdown-toggle col-2 entity-type-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Petroleum Stored Is For
+
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li>
@@ -496,6 +515,166 @@
                 <strong>Selected Option:</strong> <span id="selectedOptionTextPetroleum"></span>
             </div>
             </div>
+
+
+
+
+
+
+
+            <!-- Site Operations Conducted -->
+
+            <div class="dropdown mt-5 d-flex flex-column">
+                <p>Site Operations Conducted*
+                    <span class="helper-icon ml-1" data-tooltip="Choose All That Apply">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
+                <div class="d-flex">
+                <button class="btn btn-outline-custom dropdown-toggle col-2 entity-type-button" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Site Operations
+
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="1" id="radioOne">
+                            <label class="form-check-label" for="radioOne">
+                                Agriculture
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="2" id="radioTwo">
+                            <label class="form-check-label" for="radioTwo">
+                                Aviation
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="3" id="radioThree">
+                            <label class="form-check-label" for="radioThree">
+                                Auto Dealer/Rental/Garage
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="4" id="radioFour">
+                            <label class="form-check-label" for="radioFour">
+                                Bus/Transportation
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="5" id="radioFive">
+                            <label class="form-check-label" for="radioFive">
+                                Contractor/Construction
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="6" id="radioSix">
+                            <label class="form-check-label" for="radioSix">
+                                Emergency Power Generation
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="7" id="radioSeven">
+                            <label class="form-check-label" for="radioSeven">
+                                Garage Shop/Maintenance
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="8" id="radioEight">
+                            <label class="form-check-label" for="radioEight">
+                                Heating Plant/Facility
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="9" id="radioNine">
+                            <label class="form-check-label" for="radioNine">
+                                Manufacturing/Production
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="10" id="radioTen">
+                            <label class="form-check-label" for="radioTen">
+                                Park/Recreation
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="11" id="radioEleven">
+                            <label class="form-check-label" for="radioEleven">
+                                Petroleum Distribution
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="12" id="radioTwelve">
+                            <label class="form-check-label" for="radioTwelve">
+                                Retail Petroleum Facility
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="12" id="radioTwelve">
+                            <label class="form-check-label" for="radioTwelve">
+                                Road/Street/Highway/Bridge
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="12" id="radioTwelve">
+                            <label class="form-check-label" for="radioTwelve">
+                                Truck Transport/Distribution
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="12" id="radioTwelve">
+                            <label class="form-check-label" for="radioTwelve">
+                                Utility-Public/Private
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="siteOperation" value="12" id="radioTwelve">
+                            <label class="form-check-label" for="radioTwelve">
+                                Waste Treatment/Landfill
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            </div>
+
+            <div id="selectedOptionDisplaySiteOperation" style="display: none;">
+                <strong>Selected Option:</strong> <span id="selectedOptionTextSiteOperation"></span>
+            </div>
+
+
+
 
         </form>
 

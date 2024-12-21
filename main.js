@@ -96,3 +96,26 @@ document.querySelectorAll('input[name="petroleumStored"]').forEach(function (rad
         }
     });
 });
+
+// Site Operation
+
+document.querySelectorAll('input[name="siteOperation"]').forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
+        const selectedOptionsDisplay = document.getElementById('selectedOptionDisplaySiteOperation');
+        const selectedOptionText = document.getElementById('selectedOptionTextSiteOperation');
+        
+        const selectedOptions = [];
+        
+        document.querySelectorAll('input[name="siteOperation"]:checked').forEach(function (checkedBox) {
+            const label = checkedBox.nextElementSibling.textContent;
+            selectedOptions.push(label);
+        });
+
+        if (selectedOptions.length > 0) {
+            selectedOptionsDisplay.style.display = 'block';
+            selectedOptionText.innerHTML = selectedOptions.join('<br>');
+        } else {
+            selectedOptionsDisplay.style.display = 'none';
+        }
+    });
+});
