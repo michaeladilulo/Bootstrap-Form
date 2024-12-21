@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center sticky-section">
         <p>For help filling out this application, please contact your PSTF field representative at www.idgaf.org</p>
     </div>
 
@@ -36,7 +36,7 @@
             <div class="form-group row mb-3">
                 <label for="applicantName" class="col-12 col-md-3 col-form-label">Applicant Name</label>
                 <div class="col-12 col-md-9">
-                    <input type="text" class="form-control form-input" id="applicantName">
+                    <input type="text" class="form-control form-input" id="applicantName" required="true">
                     <small class="text-muted d-block mt-1">
                         (NAME WILL APPEAR AS THE NAMED INSURED ON THE INSURANCE POLICY)
                     </small>
@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex align-items-center">
                             <label for="street1" class="mr-2 mb-0 col-xl-3">Street 1</label>
-                            <input type="text" class="form-control form-input" id="street1">
+                            <input type="text" class="form-control form-input" id="street1" required="true">
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center mt-3 mt-md-0">
                             <label for="street2" class="mr-2 mb-0 col-xl-3">Street 2</label>
@@ -63,15 +63,15 @@
                     <div class="row">
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="mailingCity" class="mr-2">City</label>
-                            <input type="text" class="form-control" id="mailingCity">
+                            <input type="text" class="form-control" id="mailingCity" required="true">
                         </div>
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="mailingState" class="mr-2">State</label>
-                            <input type="text" class="form-control" id="mailingState">
+                            <input type="text" class="form-control" id="mailingState" required="true">
                         </div>
                         <div class="col-md-4 d-flex align-items-center">
                             <label for="mailingZip" class="mr-2">Zip</label>
-                            <input type="text" class="form-control" id="mailingZip">
+                            <input type="text" class="form-control" id="mailingZip" required="true">
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex align-items-center">
                             <label for="mailingPhone" class="mr-2 mb-0 col-xl-3">Phone</label>
-                            <input type="text" class="form-control form-input" id="mailingPhone">
+                            <input type="text" class="form-control form-input" id="mailingPhone" required="true">
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center mt-3 mt-md-0">
                             <label for="mailingFax" class="mr-2 mb-0 col-xl-3">Fax</label>
@@ -96,12 +96,16 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex align-items-center">
-                            <label for="inputEmail" class="mr-2 mb-0 col-xl-3">Email</label>
-                            <input type="email" class="form-control form-input" id="inputEmail">
+                            <label for="inputEmail" class="mr-2 mb-0 col-xl-3">Email
+                                <span class="helper-icon ml-1" data-tooltip="General Email Preferred">
+                                    <i class="fa-solid fa-circle-exclamation"></i>
+                                </span> 
+                            </label>
+                            <input type="email" class="form-control form-input" id="inputEmail" required="true">
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center mt-3 mt-md-0">
                             <label for="taxIdentification" class="mr-2 mb-0 col-xl-3">Tax Id</label>
-                            <input type="text" class="form-control form-input" id="taxIdentification">
+                            <input type="text" class="form-control form-input" id="taxIdentification" required="true">
                         </div>
                     </div>
                 </div>
@@ -116,21 +120,23 @@
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span>
                             </label>
-                            <input type="text" class="form-control form-input" id="mainPoc">
+                            <input type="text" class="form-control form-input" id="mainPoc" required="true">
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center mt-3 mt-md-0">
                             <label for="pocTitle" class="mr-2 mb-0 col-xl-3">Title</label>
-                            <input type="text" class="form-control form-input" id="pocTitle">
+                            <input type="text" class="form-control form-input" id="pocTitle" required="true">
                         </div>
                     </div>
                 </div>
             </div>
+            <button type="submit">send</button>
         </form>
+
+        <div class="expanded">m</div>
         
     </div>
-    
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </html>

@@ -52,3 +52,23 @@ html {
     visibility: hidden;
     transition: opacity 0.2s;
 }
+
+.sticky-section {
+    position: sticky;
+    top: 0;
+    background-color: transparent;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: background-color 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.sticky-section.sticky-active {
+    background-color: rgba(228, 10, 10, 0.8);
+}
+
+.expanded {
+    min-height:4000px;
+}
