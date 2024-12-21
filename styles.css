@@ -67,8 +67,33 @@ html {
 
 .sticky-section.sticky-active {
     background-color: rgba(228, 10, 10, 0.8);
+    color: #FFFFFF;
 }
 
-.expanded {
-    min-height:4000px;
+.required-true-color {
+    color: rgb(255, 0, 0);
+}
+
+.btn-outline-custom {
+    border: 2px solid black !important;
+    color: black;
+    background-color: transparent;
+}
+
+.btn-outline-custom:focus, .btn-outline-custom:hover {
+    outline: none;
+    background-color: transparent;
+    color: black;
+}
+
+.entity-type-other {
+    margin-left: 200px !important;
+}
+
+.entity-type-button {
+    max-height: 40px !important; 
+}
+
+.col-2 {
+    width: auto !important;
 }
