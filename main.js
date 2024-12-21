@@ -61,3 +61,38 @@ document.querySelectorAll('input[name="operatorType"]').forEach(function (checkb
         }
     });
 });
+
+document.querySelectorAll('input[name="tribal"]').forEach(function (radioButton) {
+    radioButton.addEventListener('change', function () {
+        const selectedOptionDisplay = document.getElementById('selectedOptionDisplayTribal');
+        const selectedOptionText = document.getElementById('selectedOptionTextTribal');
+
+        selectedOptionDisplay.style.display = 'block';
+        selectedOptionText.textContent = this.nextElementSibling.textContent;
+
+        if (this.value === '13') {
+            otherInputContainer.style.display = 'block';
+        } else {
+            otherInputContainer.style.display = 'none';
+        }
+    });
+});
+
+// Petroleum Stored For
+
+document.querySelectorAll('input[name="petroleumStored"]').forEach(function (radioButton) {
+    radioButton.addEventListener('change', function () {
+        const selectedOptionDisplay = document.getElementById('selectedOptionDisplayPetroleum');
+        const selectedOptionText = document.getElementById('selectedOptionTextPetroleum');
+        const otherInputContainer = document.getElementById('otherInputContainerStored');
+
+        selectedOptionDisplay.style.display = 'block';
+        selectedOptionText.textContent = this.nextElementSibling.textContent;
+
+        if (this.value === '13') {
+            otherInputContainer.style.display = 'block';
+        } else {
+            otherInputContainer.style.display = 'none';
+        }
+    });
+});
