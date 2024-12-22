@@ -115,7 +115,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex align-items-center">
-                            <label for="mainPoc" class="mr-2 mb-0 col-xl-3">Contact<span class="required-true-color">*</span>
+                            <label for="mainPoc" class="mr-2 mb-0 col-xl-4">Contact<span class="required-true-color">*</span>
                                 <span class="helper-icon ml-1" data-tooltip="Enter Main Point of Contact Information Here">
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span>
@@ -312,7 +312,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-9 d-flex align-items-center">
-                            <label for="sitefacilityid" class="mr-2 mb-0 col-xl-3">Site / Facility ID
+                            <label for="sitefacilityid" class="mr-2 mb-0 col-xl-4">Site / Facility ID
                                 <span class="helper-icon ml-1" data-tooltip="Assigned By Idaho Department of Environmental Quanlity (DEQ)">
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span> 
@@ -342,7 +342,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-10 d-flex align-items-center">
-                            <label for="landOwnerName" class="mr-2 mb-0 col-xl-3">Land Owner Name<span class="required-true-color">*</span>
+                            <label for="landOwnerName" class="mr-2 mb-0 col-xl-4">Land Owner Name<span class="required-true-color">*</span>
                             </label>
                             <input type="text" class="form-control form-input" id="street1" required="true">
                         </div>
@@ -354,7 +354,7 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-md-10 d-flex align-items-center">
-                            <label for="operatorName" class="mr-2 mb-0 col-xl-3">Operator Name
+                            <label for="operatorName" class="mr-2 mb-0 col-xl-4">Operator Name
                                 <span class="helper-icon ml-1" data-tooltip="Please provide Operator Name if different from Land Owner">
                                     <i class="fa-solid fa-circle-exclamation"></i>
                                 </span> 
@@ -797,22 +797,48 @@
               <tbody tbody class="tank-section">
                 <tr>
                   <td class="frozen-column">Currently In Service</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <label class="form-check-label">
+                        <input type="radio" name="serviceYesNo" value="yes" class="form-check-input">
+                        Yes
+                    </label>
+                    <label class="form-check-label ms-3">
+                        <input type="radio" name="serviceYesNo" value="no" class="form-check-input">
+                        No
+                    </label>
+                </td>
+                
+                
 
                 </tr>
                 <tr>
                   <td class="frozen-column">Temporarily out of service - indicate date taken out of service</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <input type="date" class="form-control">
+                </td>
+                
 
                 </tr>
                 <tr>
                   <td class="frozen-column">Permanently out of service – closed in place. Indicate date permanently closed. (month/year)</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <input type="month" class="form-control">
+                </td>
+                
 
                 </tr>
                 <tr>
                   <td class="frozen-column">Site assessment completed when tank removed/closed.</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <label class="form-check-label">
+                        <input type="radio" name="assessmentYesNo" value="yes" class="form-check-input">
+                        Yes
+                    </label>
+                    <label class="form-check-label ms-3">
+                        <input type="radio" name="assessmentYesNo" value="no" class="form-check-input">
+                        No
+                    </label>
+                </td>
 
                 </tr>
               </tbody>
@@ -826,19 +852,34 @@
               <tbody class="tank-section">
                 <tr>
                   <td class="frozen-column">Install Date</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <input type="date" class="form-control">
+                </td>
+                
 
                 </tr>
                 <tr>
                   <td class="frozen-column">Date of most recent tank tightness test. Attach copy of test results.</td>
-                  <td><input type="text" class="form-control"></td>
+                  <td>
+                    <input type="date" class="form-control">
+                </td>
+                
 
                 </tr>
                 <tr>
                   <td class="frozen-column">Tank system complies with federal, state and local petroleum
                     storage tank regulations. (Including leak detection and record
                     keeping requirements for USTs.)</td>
-                  <td><input type="text" class="form-control"></td>
+                    <td>
+                        <label class="form-check-label">
+                            <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                            Yes
+                        </label>
+                        <label class="form-check-label ms-3">
+                            <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                            No
+                        </label>
+                    </td>
 
                 </tr>
               </tbody>
@@ -856,44 +897,106 @@
                               </tr>
                               <tr>
                                 <td class="frozen-column">Compartmentalized Tank</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                        Yes
+                                    </label>
+                                    <label class="form-check-label ms-3">
+                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                        No
+                                    </label>
+                                </td>
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Liquid Tight Spill Bucket Installed</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                        Yes
+                                    </label>
+                                    <label class="form-check-label ms-3">
+                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                        No
+                                    </label>
+                                </td>
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Indicate type of spill bucket installed (SW = single walled,
                                     DW = double walled, S = steel, O = other)</td>
-                                <td><input type="text" class="form-control"></td>
+                                    <td>
+                                        <label class="form-check-label">
+                                            <input type="radio" name="yesNoOption" value="single" class="form-check-input">
+                                            SW
+                                        </label>
+                                        <label class="form-check-label ms-3">
+                                            <input type="radio" name="yesNoOption" value="double" class="form-check-input">
+                                            DW
+                                        </label>
+                                        <label class="form-check-label">
+                                            <input type="radio" name="yesNoOption" value="steel" class="form-check-input">
+                                            S
+                                        </label>
+                                        <label class="form-check-label ms-3">
+                                            <input type="radio" name="yesNoOption" value="other" class="form-check-input">
+                                            O
+                                        </label>
+                                    </td>
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Date of most recent spill bucket test. Attach copy of test results.</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <input type="date" class="form-control">
+                                </td>
+                                
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Tank Turbine is in Liquid Tight Sump</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                        Yes
+                                    </label>
+                                    <label class="form-check-label ms-3">
+                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                        No
+                                    </label>
+                                </td>
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Date of most recent turbine sump test. Attach copy of test results.</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <input type="date" class="form-control">
+                                </td>
+                                
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Liquid Tight Sump Installed Beneath Dispenser</td>
-                                <td><input type="text" class="form-control"></td>
+                                <td>
+                                    <label class="form-check-label">
+                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                        Yes
+                                    </label>
+                                    <label class="form-check-label ms-3">
+                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                        No
+                                    </label>
+                                </td>
 
                               </tr>
                               <tr>
                                 <td class="frozen-column">Date of most recent dispenser containment test. Attach copy of
                                     test results.</td>
-                                <td><input type="text" class="form-control"></td>
+                                    <td>
+                                        <input type="date" class="form-control">
+                                    </td>
+                                    
 
                               </tr>
                               <tr>
@@ -906,7 +1009,16 @@
                                 <td class="frozen-column">Are there any additional tanks located on the property that are
                                     currently TOU (temporarily out of use) or excluded from this
                                     application – explain at end of Schedule U.</td>
-                                <td><input type="text" class="form-control"></td>
+                                    <td>
+                                        <label class="form-check-label">
+                                            <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                            Yes
+                                        </label>
+                                        <label class="form-check-label ms-3">
+                                            <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                            No
+                                        </label>
+                                    </td>
 
                               </tr>
                             </tbody>
@@ -918,65 +1030,54 @@
             
                           <tbody class="tank-section">
                             <tr>
-                              <td class="frozen-column">Aviation Fuel</td>
-                              <td><input type="text" class="form-control"></td>
+                              <td class="frozen-column">Select From Options:</td>
+                              <td>
+                                <div class="dropdown">
+                                    <button id="dropdownSubstanceButton" onclick="toggleSubstanceDropdown(event)">Substance</button>
+                                    <div id="dropdownSubstanceMenu" class="dropdown-menu">
+                                        <label>
+                                            <input type="radio" name="option" value="aviationFuel" onclick="selectSubstanceOption('Aviation Fuel', event)"> Aviation Fuel
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="diesel" onclick="selectSubstanceOption('Diesel', event)"> Diesel
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="gasoline" onclick="selectSubstanceOption('Gasoline', event)"> Gasoline
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="heatingOil" onclick="selectSubstanceOption('Heating Oil', event)"> Heating Oil
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="hydraulicOil" onclick="selectSubstanceOption('Hydraulic Oil', event)"> Hydraulic Oil
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="jetFuel" onclick="selectSubstanceOption('Jet Fuel', event)"> Jet Fuel
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="kerosene" onclick="selectSubstanceOption('Kerosene', event)"> Kerosene
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="motorOil" onclick="selectSubstanceOption('Motor Oil', event)"> Motor Oil
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="usedOil" onclick="selectSubstanceOption('Used Oil', event)"> Used Oil
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="wasteOil" onclick="selectSubstanceOption('Waste Oil', event)"> Waste Oil
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="noneTankNotInUse" onclick="selectSubstanceOption('None (Tank is out of use)', event)"> None (Tank is out of use)
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="option" value="other" onclick="selectSubstanceOption('Other', event)"> Other
+                                        </label>
+                                    </div>
+                                    <span id="removeSubstanceChoice" class="remove-choice" onclick="removeSubstanceChoice()">&#10006;</span>
+                                </div>
+                            </td>
 
                             </tr>
-                            <tr>
-                              <td class="frozen-column">Diesel</td>
-                              <td><input type="text" class="form-control"></td>
-   
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Gasoline</td>
-                              <td><input type="text" class="form-control"></td>
 
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Heating Oil</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Hydraulic Oil</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Jet Fuel</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Kerosene</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Motor Oil</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Used Oil</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">Waste Oil</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                              <td class="frozen-column">None (Tank is out of use)</td>
-                              <td><input type="text" class="form-control"></td>
-
-                            </tr>
-                            <tr>
-                                <td class="frozen-column">Other - explain at end of Schedule U.</td>
-                                <td><input type="text" class="form-control"></td>
-
-                              </tr>
                           </tbody>
 
 
@@ -989,75 +1090,65 @@
                                       
                                                     <tbody class="tank-section">
                                                       <tr>
-                                                        <td class="frozen-column">Bare Steel</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td class="frozen-column">Select From Options</td>
+                                                        <td>
+                                                            <div class="dropdown">
+                                                                <button id="dropdownMaterialButton" onclick="toggleMaterialDropdown(event)">Material</button>
+                                                                <div id="dropdownMaterialMenu" class="dropdown-menu">
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="bareSteel" onclick="selectMaterialOption('Bare Steel', event)"> Bare Steel
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="bscp" onclick="selectMaterialOption('Bare Steel with Cathodic Protection (CP)', event)"> Bare Steel with Cathodic Protection (CP)
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="bscpinternal" onclick="selectMaterialOption('Bare Steel with CP and Interior Lining', event)"> Bare Steel with CP and Interior Lining
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="bsinterior" onclick="selectMaterialOption('Bare Steel w/Interior Lining', event)"> Bare Steel w/Interior Lining
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="bsbasincontainment" onclick="selectMaterialOption('Bare Steel w/Secondary Basin Containment', event)"> Bare Steel w/Secondary Basin Containment
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="compositeSteel" onclick="selectMaterialOption('Composite Steel w/Fiberglass', event)"> Composite Steel w/Fiberglass
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="epoxyCoated" onclick="selectMaterialOption('Epoxy Coated Steel', event)"> Epoxy Coated Steel
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="epoxySecondaryContainment" onclick="selectMaterialOption('Epoxy Coated Steel w/Secondary Containment', event)"> Epoxy Coated Steel w/Secondary Containment
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="fiberglassSingle" onclick="selectMaterialOption('Fiberglass – Single Walled', event)"> Fiberglass – Single Walled
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="fiberglassDouble" onclick="selectMaterialOption('Fiberglass - Double Walled', event)"> Fiberglass - Double Walled
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="coatedstip3" onclick="selectMaterialOption('Coated Steel/Cathodic Protection (STiP3)', event)"> Coated Steel/Cathodic Protection (STiP3)
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="coatedStip4" onclick="selectMaterialOption('Coated Double Wall Steel w/Cathodic Protection (STiP4)', event)"> Coated Double Wall Steel w/Cathodic Protection (STiP4)
+                                                                    </label>
+                                                                    <label>
+                                                                        <input type="radio" name="option" value="materialOther" onclick="selectMaterialOption('Other - explain at end of Schedule U', event)"> Other - explain at end of Schedule U
+                                                                    </label>
+                                                                </div>
+                                                                <span id="removeMaterialChoice" class="remove-choice" onclick="removeMaterialChoice()">&#10006;</span>
+                                                            </div>
+                                                        </td>
 
                                                       </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Bare Steel with Cathodic Protection (CP)</td>
-                                                        <td><input type="text" class="form-control"></td>
-   
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Bare Steel with CP and Interior Lining</td>
-                                                        <td><input type="text" class="form-control"></td>
 
-                                                      </tr>
                                                       <tr>
                                                         <td class="frozen-column">Date of most recent tank CP test. Attach copy of test results.</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <input type="date" class="form-control">
+                                                        </td>
+                                                        
    
                                                       </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Bare Steel w/Interior Lining</td>
-                                                        <td><input type="text" class="form-control"></td>
- 
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Bare Steel w/Secondary Basin Containment</td>
-                                                        <td><input type="text" class="form-control"></td>
-   
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Composite Steel w/Fiberglass</td>
-                                                        <td><input type="text" class="form-control"></td>
-       
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Epoxy Coated Steel</td>
-                                                        <td><input type="text" class="form-control"></td>
-     
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Epoxy Coated Steel w/Secondary Containment</td>
-                                                        <td><input type="text" class="form-control"></td>
-
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Fiberglass – Single Walled</td>
-                                                        <td><input type="text" class="form-control"></td>
-   
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Fiberglass - Double Walled</td>
-                                                        <td><input type="text" class="form-control"></td>
-  
-                                                      </tr>
-                                                      <tr>
-                                                          <td class="frozen-column">Coated Steel/Cathodic Protection (STiP3)</td>
-                                                          <td><input type="text" class="form-control"></td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="frozen-column">Coated Double Wall Steel w/Cathodic Protection (STiP4)</td>
-                                                            <td><input type="text" class="form-control"></td>
-
-                                                          </tr>
-                                                          <tr>
-                                                            <td class="frozen-column">Other - explain at end of Schedule U</td>
-                                                            <td><input type="text" class="form-control"></td>
-    
-                                                          </tr>
 
 
                                                           <!-- Release Detection -->
@@ -1070,53 +1161,119 @@
                                                     <tbody class="tank-section">
                                                       <tr>
                                                         <td class="frozen-column">Automatic Tank Gauging (ATG)</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Date of most recent ATG & sensor test. Attach copy of test
                                                             results.</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                            <td>
+                                                                <input type="date" class="form-control">
+                                                            </td>
+                                                            
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Interstitial Monitoring (Double walled tank)</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Date of most recent tank CP test. Attach copy of test results.</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <input type="date" class="form-control">
+                                                        </td>
+                                                        
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Manual Tank Gauging Only</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">MTG - Annual Tank Tightness Test Date</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <input type="date" class="form-control">
+                                                        </td>
+                                                        
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Monthly Inventory Control</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">MIC - Annual Tank Tightness Test Date</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <input type="date" class="form-control">
+                                                        </td>
+                                                        
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Monthly Inventory Control Only</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
                                                         <td class="frozen-column">Statistical Inventory Reconciliation</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td>
+                                                            <label class="form-check-label">
+                                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                Yes
+                                                            </label>
+                                                            <label class="form-check-label ms-3">
+                                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                No
+                                                            </label>
+                                                        </td>
 
                                                       </tr>
                                                       <tr>
@@ -1138,74 +1295,48 @@
                                                     <tbody class="tank-section">
                                                       <tr>
                                                         <td class="frozen-column">Bare Steel (Aboveground)</td>
-                                                        <td><input type="text" class="form-control"></td>
+                                                        <td class="td-options-multi">
+                                                            <div class="dropdown-container">
+                                                              <!-- Caret Icon to Toggle Dropdown -->
+                                                              <span class="caret" onclick="toggleDropdown()">&#9660;</span>
+                                                              
+                                                              <!-- Hidden Dropdown -->
+                                                              <div class="dropdown dropdown-multi-options" id="dropdown">
+                                                                <label><input type="checkbox" value="Bare Steel (Aboveground)" onchange="updateSelectedOptions()"> Bare Steel (Aboveground)</label><br>
+                                                                <label><input type="checkbox" value="Bare Steel w/Double Wall" onchange="updateSelectedOptions()"> Bare Steel w/Double Wall</label><br>
+                                                                <label><input type="checkbox" value="Bare Steel w/Cathodic Protection" onchange="updateSelectedOptions()"> Bare Steel w/Cathodic Protection</label><br>
+                                                                <label><input type="checkbox" value="Bare Steel w/Secondary Barrier" onchange="updateSelectedOptions()"> Bare Steel w/Secondary Barrier</label><br>
+                                                                <label><input type="checkbox" value="Copper" onchange="updateSelectedOptions()"> Copper</label><br>
+                                                                <label><input type="checkbox" value="Fiberglass – Single Walled" onchange="updateSelectedOptions()"> Fiberglass – Single Walled</label><br>
+                                                                <label><input type="checkbox" value="Fiberglass – Double Walled" onchange="updateSelectedOptions()"> Fiberglass – Double Walled</label><br>
+                                                                <label><input type="checkbox" value="Flexible Double Wall" onchange="updateSelectedOptions()"> Flexible Double Wall</label><br>
+                                                                <label><input type="checkbox" value="Flexible Single Wall" onchange="updateSelectedOptions()"> Flexible Single Wall</label><br>
+                                                                <label><input type="checkbox" value="Galvanized Steel" onchange="updateSelectedOptions()"> Galvanized Steel</label><br>
+                                                                <label><input type="checkbox" value="Galvanized Steel w/ CP" onchange="updateSelectedOptions()"> Galvanized Steel w/ CP</label><br>
+                                                                <label><input type="checkbox" value="Galvanized w/Double Wall" onchange="updateSelectedOptions()"> Galvanized w/Double Wall</label><br>
+                                                              </div>
+                                                              
+                                                              <!-- Selected Options Display -->
+                                                              <div class="selected-options" id="selectedOptions"></div>
+                                                            </div>
+                                                          </td>
        
                                                       </tr>
                                                       <tr>
-                                                        <td class="frozen-column">Bare Steel w/Double Wall</td>
-                                                        <td><input type="text" class="form-control"></td>
- 
-                                                      </tr>
-                                                      <tr>
-                                                        <td class="frozen-column">Bare Steel w/Cathodic Protection</td>
-                                                        <td><input type="text" class="form-control"></td>
-
-                                                      </tr>
-                                                      <tr>
                                                         <td class="frozen-column">Date of most recent pipe CP test. Attach copy of test results.</td>
-                                                        <td><input type="text" class="form-control"></td>
-
-                                                      </tr>
-                                                        <tr>
-                                                          <td class="frozen-column">Bare Steel w/Secondary Barrier</td>
-                                                          <td><input type="text" class="form-control"></td>
-  
-                                                        </tr>
-                                                        <tr>
-                                                          <td class="frozen-column">Copper</td>
-                                                          <td><input type="text" class="form-control"></td>
-
-                                                        </tr>
-                                                        <tr>
-                                                          <td class="frozen-column">Fiberglass – Single Walled</td>
-                                                          <td><input type="text" class="form-control"></td>
-                  
-                                                        </tr>
-                                                        <tr>
-                                                          <td class="frozen-column">Fiberglass – Double Walled</td>
-                                                          <td><input type="text" class="form-control"></td>
-               
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="frozen-column">Flexible Double Wall</td>
-                                                            <td><input type="text" class="form-control"></td>
-          
-                                                          </tr>
-                                                          <tr>
-                                                            <td class="frozen-column">Flexible Single Wall</td>
-                                                            <td><input type="text" class="form-control"></td>
-
-                                                          </tr>
-                                                          <tr>
-                                                            <td class="frozen-column">Galvanized Steel</td>
-                                                            <td><input type="text" class="form-control"></td>
-
-                                                          </tr>
-                                                          <tr>
-                                                            <td class="frozen-column">Galvanized Steel w/ CP</td>
-                                                            <td><input type="text" class="form-control"></td>
-             
-                                                          </tr>
+                                                        <td>
+                                                            <input type="date" class="form-control">
+                                                        </td>
+                                                        
                                                           <tr>
                                                             <td class="frozen-column">Date of most recent pipe CP test. Attach copy of test results.</td>
-                                                            <td><input type="text" class="form-control"></td>
+                                                            <td>
+                                                                <input type="date" class="form-control">
+                                                            </td>
+                                                            
            
                                                           </tr>
-                                                          <tr>
-                                                            <td class="frozen-column">Galvanized w/Double Wall</td>
-                                                            <td><input type="text" class="form-control"></td>
-    
-                                                          </tr>
+
 
 
                                                           <th class="frozen-column pipe-material-frozen">9. Pipe Suction System
@@ -1215,14 +1346,32 @@
                                           
                                                         <tbody class="tank-section">
                                                           <tr>
-                                                            <td class="frozen-column">Check valve at dispenser and piping is sloped so contents will drain
+                                                            <td class="frozen-column">Checked valve at dispenser and piping is sloped so contents will drain
                                                                 back to tank if suction released.</td>
-                                                            <td><input type="text" class="form-control"></td>
+                                                                <td>
+                                                                    <label class="form-check-label">
+                                                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                        Yes
+                                                                    </label>
+                                                                    <label class="form-check-label ms-3">
+                                                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                        No
+                                                                    </label>
+                                                                </td>
         
                                                           </tr>
                                                           <tr>
                                                             <td class="frozen-column">Foot Valve at Tank</td>
-                                                            <td><input type="text" class="form-control"></td>
+                                                            <td>
+                                                                <label class="form-check-label">
+                                                                    <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                                    Yes
+                                                                </label>
+                                                                <label class="form-check-label ms-3">
+                                                                    <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                                    No
+                                                                </label>
+                                                            </td>
        
                                                           </tr>
                                                           <tr>
@@ -1233,7 +1382,9 @@
                                                           <tr>
                                                             <td class="frozen-column">Date of most recent line tightness test. Attach copy of test results.
                                                                 (Suction system w/ underground lines w/foot valve at tank.)</td>
-                                                            <td><input type="text" class="form-control"></td>
+                                                                <td>
+                                                                    <input type="date" class="form-control">
+                                                                </td>
        
                                                           </tr>
 
@@ -1250,22 +1401,52 @@
                                             <tbody class="tank-section">
                                                 <tr>
                                                   <td class="frozen-column">Electronic Line Leak Detector (ELLD) w/Flow Restriction or Shut-off</td>
-                                                  <td><input type="text" class="form-control"></td>
+                                                  <td>
+                                                    <label class="form-check-label">
+                                                        <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                        Yes
+                                                    </label>
+                                                    <label class="form-check-label ms-3">
+                                                        <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                        No
+                                                    </label>
+                                                </td>
    
                                                 </tr>
                                                 <tr>
                                                     <td class="frozen-column">Manual Line Leak Detector (MLLD) w/Flow Restriction or Shut-off</td>
-                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                            Yes
+                                                        </label>
+                                                        <label class="form-check-label ms-3">
+                                                            <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                            No
+                                                        </label>
+                                                    </td>
        
                                                   </tr>
                                                   <tr>
                                                     <td class="frozen-column">Date of Most Recent ELLD/MLLD Test. Attach copy test results.</td>
-                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>
+                                                        <input type="date" class="form-control">
+                                                    </td>
+                                                    
 
                                                   </tr>
                                                   <tr>
                                                     <td class="frozen-column">Visual Inspection</td>
-                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>
+                                                        <label class="form-check-label">
+                                                            <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                            Yes
+                                                        </label>
+                                                        <label class="form-check-label ms-3">
+                                                            <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                            No
+                                                        </label>
+                                                    </td>
 
                                                   </tr>
                                                   <tr>
@@ -1291,32 +1472,86 @@
                                     <tr>
                                       <td class="frozen-column">ATG - Automatically Conducts Full System Test (Test both tanks
                                         and pipes)</td>
-                                      <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
        
                                     </tr>
                                     <tr>
                                         <td class="frozen-column">Interstitial Monitoring – Monitoring within Double Walled Pipe</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
 
                                       </tr>
                                       <tr>
                                         <td class="frozen-column">Line Tightness Testing - Yearly</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
 
                                       </tr>
                                       <tr>
                                         <td class="frozen-column">Liquid Sump Sensor within the Dispenser Sump</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
 
                                       </tr>
                                       <tr>
                                         <td class="frozen-column">Liquid Sump Sensor in Turbine Sump</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
   
                                       </tr>
                                       <tr>
                                         <td class="frozen-column">Monthly Visual - Pipe in Accessible Containment (Concrete Trench)</td>
-                                        <td><input type="text" class="form-control"></td>
+                                        <td>
+                                            <label class="form-check-label">
+                                                <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                                Yes
+                                            </label>
+                                            <label class="form-check-label ms-3">
+                                                <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                                No
+                                            </label>
+                                        </td>
 
                                       </tr>
                                       <tr>
@@ -1340,17 +1575,44 @@
                       <tbody class="tank-section">
                           <tr>
                             <td class="frozen-column">Petroleum pipe is installed within a secondary service conduit.</td>
-                            <td><input type="text" class="form-control"></td>
+                            <td>
+                                <label class="form-check-label">
+                                    <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                    Yes
+                                </label>
+                                <label class="form-check-label ms-3">
+                                    <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                    No
+                                </label>
+                            </td>
 
                           </tr>
                           <tr>
                               <td class="frozen-column">Stainless steel flex connector(s) is installed on line.</td>
-                              <td><input type="text" class="form-control"></td>
+                              <td>
+                                <label class="form-check-label">
+                                    <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                    Yes
+                                </label>
+                                <label class="form-check-label ms-3">
+                                    <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                    No
+                                </label>
+                            </td>
 
                             </tr>
                             <tr>
                               <td class="frozen-column">Stainless steel flex connector is protected from corrosion.</td>
-                              <td><input type="text" class="form-control"></td>
+                              <td>
+                                <label class="form-check-label">
+                                    <input type="radio" name="yesNoOption" value="yes" class="form-check-input">
+                                    Yes
+                                </label>
+                                <label class="form-check-label ms-3">
+                                    <input type="radio" name="yesNoOption" value="no" class="form-check-input">
+                                    No
+                                </label>
+                            </td>
 
                             </tr>
                     </tbody>    

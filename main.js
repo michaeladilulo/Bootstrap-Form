@@ -169,11 +169,22 @@ function addColumn(event) {
     tbodySections.forEach(tbody => {
         const rows = tbody.querySelectorAll("tr");
         rows.forEach(row => {
-            // Add new cells only to rows with <td> elements (data rows)
-            const lastCell = row.querySelector("td"); // Check if the row has data cells
+            const lastCell = row.querySelector("td:last-child");
             if (lastCell) {
+                // Determine the data type of the last cell
+                const lastInput = lastCell.querySelector("input");
+                const inputType = lastInput ? lastInput.getAttribute("type") : "text";
+
+                // Add a new cell with the appropriate input type
                 const newCell = document.createElement("td");
-                newCell.innerHTML = `<input type="text" class="form-control">`;
+                if (inputType === "date") {
+                    newCell.innerHTML = `<input type="date" class="form-control">`;
+                } else if (inputType === "text") {
+                    newCell.innerHTML = `<input type="text" class="form-control">`;
+                } else {
+                    // Default to text if the type is unknown
+                    newCell.innerHTML = `<input type="text" class="form-control">`;
+                }
                 row.appendChild(newCell);
             }
         });
@@ -185,6 +196,7 @@ function addColumn(event) {
 
     console.log("New column added.");
 }
+
 
 
 
@@ -318,3 +330,135 @@ fileUploadBox.addEventListener("dragleave", (e) => {
 });
 fileBrowseInput.addEventListener("change", (e) => handleSelectedFiles(e.target.files));
 fileBrowseButton.addEventListener("click", () => fileBrowseInput.click());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Table Dropdown
+
+function toggleMaterialDropdown(event) {
+    event.preventDefault();
+    const menu = document.getElementById("dropdownMaterialMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function selectMaterialOption(materialOption, event) {
+    event.preventDefault();
+    const button = document.getElementById("dropdownMaterialButton");
+    const removeChoice = document.getElementById("removeMaterialChoice");
+
+    // Update the button text with the selected option and hide the dropdown
+    button.innerHTML = materialOption;
+    document.getElementById("dropdownMaterialMenu").style.display = "none";
+
+    // Show the 'x' button to remove the choice
+    removeChoice.classList.add("visible");
+}
+
+function removeMaterialChoice() {
+    const button = document.getElementById("dropdownMaterialButton");
+    const removeChoice = document.getElementById("removeMaterialChoice");
+
+    // Reset the button text and hide the 'x' button
+    button.innerHTML = "Select Option";
+    removeChoice.classList.remove("visible");
+
+    // Uncheck any selected radio button
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.checked = false);
+}
+
+
+
+function toggleSubstanceDropdown(event) {
+    event.preventDefault();
+    const menu = document.getElementById("dropdownSubstanceMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function selectSubstanceOption(substanceOption, event) {
+    event.preventDefault();
+    const button = document.getElementById("dropdownSubstanceButton");
+    const removeChoice = document.getElementById("removeSubstanceChoice");
+
+    // Update the button text with the selected option and hide the dropdown
+    button.innerHTML = substanceOption;
+    document.getElementById("dropdownSubstanceMenu").style.display = "none";
+
+    // Show the 'x' button to remove the choice
+    removeChoice.classList.add("visible");
+}
+
+function removeSubstanceChoice() {
+    const button = document.getElementById("dropdownSubstanceButton");
+    const removeChoice = document.getElementById("removeSubstanceChoice");
+
+    // Reset the button text and hide the 'x' button
+    button.innerHTML = "Select Option";
+    removeChoice.classList.remove("visible");
+
+    // Uncheck any selected radio button
+    const radios = document.querySelectorAll('input[type="radio"]');
+    radios.forEach(radio => radio.checked = false);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Multi select within table
+// Toggles the visibility of the dropdown when the caret is clicked
+function toggleDropdown() {
+    const dropdown = document.getElementById('dropdown');
+    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  }
+  
+  // Updates the selected options display
+  function updateSelectedOptions() {
+    const selectedOptionsElement = document.getElementById('selectedOptions');
+    const checkboxes = document.querySelectorAll('.dropdown input[type="checkbox"]:checked');
+    
+    selectedOptionsElement.innerHTML = ''; // Clear previous selections
+    
+    checkboxes.forEach(checkbox => {
+      const selectedOption = document.createElement('div');
+      selectedOption.classList.add('selected-option');
+      
+      selectedOption.innerHTML = `${checkbox.value} <span class="close-btn" onclick="removeOption('${checkbox.value}')">x</span>`;
+      selectedOptionsElement.appendChild(selectedOption);
+    });
+  }
+  
+  // Removes the selected option
+  function removeOption(value) {
+    const checkbox = document.querySelector(`.dropdown input[value="${value}"]`);
+    if (checkbox) {
+      checkbox.checked = false;
+    }
+    updateSelectedOptions();
+  }
+  

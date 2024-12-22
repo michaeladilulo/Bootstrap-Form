@@ -261,6 +261,8 @@ form {
     overflow: auto; /* Ensure the table scrolls without overlap */
     z-index: 1; /* Set z-index appropriately */
     width: 100%;
+    max-height: 350px;
+    overflow-y: scroll;
 }
 
   table {
@@ -272,7 +274,7 @@ form {
   th, td {
     border: 1px solid #FFF;
     padding: 2px;
-    text-align: center;
+    text-align: right;
     font-size: 14px;
   }
 
@@ -323,4 +325,72 @@ form {
   .pipe-material-helper-tool[data-tooltip] {
     position: relative; /* Required for proper z-index application */
     z-index: 101 !important; /* Adjust as needed */
+}
+
+/* Make the input smaller */
+input[type="date"], input[type="month"] {
+  width: 100px; /* Adjust width as needed */
+  padding: 5px; /* Adjust padding for a smaller input */
+  font-size: 12px; /* Adjust font size */
+}
+
+.remove-choice:hover {
+    cursor: pointer;
+}
+
+
+
+/* Multi Select within table */
+.td-options-multi {
+  width: 300px;
+  padding: 10px;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.caret {
+  cursor: pointer;
+  font-size: 10px;
+  user-select: none;
+}
+
+.dropdown-multi-options {
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.selected-options {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.selected-option {
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.selected-option .close-btn {
+  margin-left: 5px;
+  cursor: pointer;
+  color: red;
+}
+
+.td-multi-choice-options {
+  overflow-y: scroll;
 }
