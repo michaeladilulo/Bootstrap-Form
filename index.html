@@ -429,7 +429,7 @@
             </div>
 
             <div class="dropdown mt-5 d-flex flex-column">
-                <p>Tribal Reservations / Trusted Lands*
+                <p>Tribal Reservations / Trusted Lands<span class="required-true-color">*</span>
                     <span class="helper-icon ml-1" data-tooltip="Select One Of The Following">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
@@ -472,11 +472,8 @@
                 <strong>Selected Option:</strong> <span id="selectedOptionTextTribal"></span>
             </div>
 
-
-
-            <!-- Petroleum Stored Is For -->
             <div class="dropdown mt-5 d-flex flex-column">
-                <p>Petroleum Stored Is For*
+                <p>Petroleum Stored Is For<span class="required-true-color">*</span>
                     <span class="helper-icon ml-1" data-tooltip="Select One Of The Following">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
@@ -516,16 +513,8 @@
             </div>
             </div>
 
-
-
-
-
-
-
-            <!-- Site Operations Conducted -->
-
             <div class="dropdown mt-5 d-flex flex-column">
-                <p>Site Operations Conducted*
+                <p>Site Operations Conducted<span class="required-true-color">*</span>
                     <span class="helper-icon ml-1" data-tooltip="Choose All That Apply">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
@@ -673,8 +662,38 @@
                 <strong>Selected Option:</strong> <span id="selectedOptionTextSiteOperation"></span>
             </div>
 
+            <div class="form-group mt-5 mb-5">
+                <label for="exampleFormControlTextarea1">Please provide further details about the use of the fuel tanks at the site </label>
+                <textarea class="form-control custom-textarea-border" id="exampleFormControlTextarea1" rows="3" maxlength="300"></textarea>
+            </div>
 
-
+            <div class="d-flex flex-column wrapping-container-file-upload">
+                <h5>Attach Site Drawings In PDF Format
+                    <span class="helper-icon ml-1" data-tooltip="Useful drawings include scaled construction drawings or surveys
+                    such as Civil Site Plans, Landscape Drawings, Utility Plans, Topographic Surveys, Plat Maps, and Fuel System
+                    Plans. Identify current uses on adjacent properties. ">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+    
+                </h5>
+            <!-- Image Uploads, need to make sure the JS gets setup with sharepoint -->
+                <div class="form-group col-10 row mb-3 align-items-center">
+                    <div class="file-uploader">
+                        <div class="uploader-header">
+                          <h2 class="uploader-title">File Uploader</h2>
+                          <h4 class="file-completed-status"></h4>
+                        </div>
+                        <ul class="file-list"></ul>
+                        <div class="file-upload-box">
+                          <h2 class="box-title">
+                            <span class="file-instruction">Drag files here or</span>
+                            <span class="file-browse-button">browse</span>
+                          </h2>
+                          <input class="file-browse-input" type="file" multiple hidden>
+                        </div>
+                      </div>
+                </div>
+            </div>
 
         </form>
 
