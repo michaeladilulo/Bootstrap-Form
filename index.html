@@ -667,17 +667,16 @@
                 <textarea class="form-control custom-textarea-border" id="exampleFormControlTextarea1" rows="3" maxlength="300"></textarea>
             </div>
 
-            <div class="d-flex flex-column wrapping-container-file-upload">
+            <div class="col-12 d-flex flex-column container-wrap-file-upload align-items-center">
                 <h5>Attach Site Drawings In PDF Format
-                    <span class="helper-icon ml-1" data-tooltip="Useful drawings include scaled construction drawings or surveys
-                    such as Civil Site Plans, Landscape Drawings, Utility Plans, Topographic Surveys, Plat Maps, and Fuel System
-                    Plans. Identify current uses on adjacent properties. ">
+                    <span class="helper-icon ml-1" data-tooltip="Scaled Construction Drawings, Surveys,
+                    Civil Site Plans, Landscape Drawings, Utility Plans, Topographic Surveys, Plat Maps, and Fuel System
+                    Plans. Identify current uses on adjacent properties.">
                         <i class="fa-solid fa-circle-exclamation"></i>
                     </span>
-    
                 </h5>
             <!-- Image Uploads, need to make sure the JS gets setup with sharepoint -->
-                <div class="form-group col-10 row mb-3 align-items-center">
+                <div class="form-group col-10 row mb-3">
                     <div class="file-uploader">
                         <div class="uploader-header">
                           <h2 class="uploader-title">File Uploader</h2>
@@ -694,6 +693,357 @@
                       </div>
                 </div>
             </div>
+
+            <div id="tanks-on-site-section" class="mt-5 d-flex flex-column">
+                <p><strong>Tanks On Site</strong><span class="required-true-color">*</span>
+                    <span class="helper-icon ml-1" data-tooltip=" An AST is an UST if the volume of stored petroleum is 10% or more underground, including both tank and pipe contents. ">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span>
+                </p>
+                <div class="d-flex flex-column">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="1" id="tanksAst" data-link="applicationAst">
+                        <label class="form-check-label" for="tanksAst">
+                            Aboveground Storage Tanks (AST)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="2" id="tanksUst" data-link="applicationUst">
+                        <label class="form-check-label" for="tanksUst">
+                            Underground Storage Tanks (UST)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="insurance-application-section" class="mt-5 d-flex flex-column">
+                <p><strong>Tank(s) Application for Insurance For The Following Tank Types</strong><span class="required-true-color">*</span></p>
+                <div class="d-flex flex-column">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="1" id="applicationAst" data-link="tanksAst">
+                        <label class="form-check-label" for="applicationAst">
+                            Aboveground Storage Tanks (AST)
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="2" id="applicationUst" data-link="tanksUst">
+                        <label class="form-check-label" for="applicationUst">
+                            Underground Storage Tanks (UST)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom section page 3 -->
+            <div id="spcc-section-questions" class="mt-5 d-flex flex-column">
+                <p><strong>Spill Prevention, Control and Countermeasure Plan (SPCC)</strong>
+                    <span class="helper-icon ml-1" data-tooltip="Only fill out if AST Tanks were selected">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </span> 
+                    <span class="required-true-color">*</span></p>
+                <div class="d-flex flex-column">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="1" id="applicationAst" data-link="tanksAst" disabled>
+                        <label class="form-check-label" for="applicationAst">
+                            SPCC plan is in place for this site?
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="2" id="applicationUst" data-link="tanksUst" disabled>
+                        <label class="form-check-label" for="applicationUst">
+                            Site is exempt from SPCC requirements?
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="tanksOnSiteType" value="2" id="applicationUst" data-link="tanksUst" disabled>
+                        <label class="form-check-label" for="applicationUst">
+                            SPCC inspections or maintenance procedures are performed as required?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group row mt-1 mb-5">
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- Label Column -->
+                            <div class="col-12 col-md-4 d-flex align-items-center">
+                                <label for="sitefacilityid" class="mr-2 mb-0 col-xl-12">Date of Most Recent SPCC Plan
+                                </label>
+                            </div>
+                            <!-- Date Picker Column -->
+                            <div class="col-12 col-md-5">
+                                <input type="date" class="form-control form-input" id="sitefacilityid" required="true" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tank Section and Adding Columns -->
+        <button class="add-column-btn" onclick="addColumn(event)">+ Add Tank</button>
+        <div class="table-wrapper">
+            <table class="table table-bordered" id="dynamic-table">
+              <thead>
+                <tr>
+                  <th class="frozen-column">Tank No.</th>
+                  <th>Tank No. 1</th>
+                  <th>Tank No. 2</th>
+                  <th>Tank No. 3</th>
+                  <th>Tank No. 4</th>
+                </tr>
+                <tr>
+                  <!-- Frozen "Tank Status" header -->
+                  <th class="frozen-column">1. Tank Status</th>
+                  <th colspan="4"></th> <!-- Span across the remaining columns for empty space -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="frozen-column">Currently In Service</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="frozen-column">Temporarily out of service - indicate date taken out of service</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="frozen-column">Permanently out of service – closed in place. Indicate date permanently closed. (month/year)</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="frozen-column">Site assessment completed when tank removed/closed.</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+              </tbody>
+
+              <tr>
+                <!-- Frozen "Tank Status" header -->
+                <th class="frozen-column">2. Tank Eligibility</th>
+                <th colspan="4"></th> <!-- Span across the remaining columns for empty space -->
+              </tr>
+
+              <tbody>
+                <tr>
+                  <td class="frozen-column">Install Date</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="frozen-column">Date of most recent tank tightness test. Attach copy of test results.</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="frozen-column">Tank system complies with federal, state and local petroleum
+                    storage tank regulations. (Including leak detection and record
+                    keeping requirements for USTs.)</td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+              </tbody>
+
+                              <!-- Frozen "Tank Status" header -->
+                              <th class="frozen-column">3. Tank Capacity and Configuration</th>
+                              <th colspan="4"></th> <!-- Span across the remaining columns for empty space -->
+                            </tr>
+              
+                            <tbody>
+                              <tr>
+                                <td class="frozen-column">Tank Capacity (gallons)</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Compartmentalized Tank</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Liquid Tight Spill Bucket Installed</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Indicate type of spill bucket installed (SW = single walled,
+                                    DW = double walled, S = steel, O = other)</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Date of most recent spill bucket test. Attach copy of test results.</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Tank Turbine is in Liquid Tight Sump</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Date of most recent turbine sump test. Attach copy of test results.</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Liquid Tight Sump Installed Beneath Dispenser</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Date of most recent dispenser containment test. Attach copy of
+                                    test results.</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">If tanks are manifolded together, identify manifolded tanks by number
+                                    (example: 1 & 2; 4 & 6)</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                              <tr>
+                                <td class="frozen-column">Are there any additional tanks located on the property that are
+                                    currently TOU (temporarily out of use) or excluded from this
+                                    application – explain at end of Schedule U.</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                            </tbody>
+
+                            <!-- Frozen "Tank Status" header -->
+                            <th class="frozen-column">4. Substance Currently Stored</th>
+                            <th colspan="4"></th> <!-- Span across the remaining columns for empty space -->
+                          </tr>
+            
+                          <tbody>
+                            <tr>
+                              <td class="frozen-column">Aviation Fuel</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Diesel</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Gasoline</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Heating Oil</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Hydraulic Oil</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Jet Fuel</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Kerosene</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Motor Oil</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Used Oil</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">Waste Oil</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <td class="frozen-column">None (Tank is out of use)</td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                              <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td class="frozen-column">Other - explain at end of Schedule U.</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                                <td><input type="text" class="form-control"></td>
+                              </tr>
+                          </tbody>
+            </table>
+          </div>
+          
 
         </form>
 

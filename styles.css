@@ -246,6 +246,74 @@ form {
    text-decoration: underline;
   }
 
-  .wrapping-container-file-upload {
-    align-items: center !important;
+
+  /* Table Styling */
+  form {
+    width: 100%;
+    max-width: 600px;  /* Make form more compact */
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Table Wrapper with Overflow-X */
+  .table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 80%;  /* Set the table width to 80% of its container */
+    table-layout: fixed;  /* Ensures fixed column width */
+  }
+
+  th, td {
+    border: 1px solid #FFF;
+    padding: 2px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 10px !important;
+  }
+
+  /* Styling for the frozen column */
+  .frozen-column {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 1;
+    width: 200px;  /* Reduced width for frozen column */
+  }
+
+  /* Styling for other columns */
+  th, td {
+    width: 120px; /* Reduced width for other columns */
+  }
+
+  /* Table header styling */
+  th {
+    background-color: #f4f4f4;
+  }
+
+  tbody, td, tfoot, th, thead, tr {
+     border-color: none !important;
+     border-style: none !important;
+     border-width: 0;
+}
+
+  /* Button Styling */
+  .add-column-btn {
+    margin: 10px 0;
+    padding: 4px 8px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .add-column-btn:hover {
+    background-color: #0056b3;
   }
