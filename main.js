@@ -152,38 +152,42 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleAstSection();
 });
 
-// Table Row Tanks
 function addColumn(event) {
-    event.preventDefault(); // Prevent default form action
+    event.preventDefault();
 
-    // Get the table element and tbody
     const table = document.getElementById("dynamic-table");
-    const tbody = table.querySelector("tbody");
+    const thead = table.querySelector("thead");
 
-    // Add a new column to each row
-    const rows = tbody.querySelectorAll("tr");
-    rows.forEach(row => {
-      const newCell = row.insertCell(-1);
-      newCell.innerHTML = `<input type="text" class="form-control">`;  // Add a new input field
-    });
-
-    // Add a new header for the new column
-    const th = table.querySelector("thead tr");
+    // Add a new header for the column
+    const thRow = thead.querySelector("tr");
     const newHeader = document.createElement("th");
-    newHeader.textContent = `Tank No. ${th.children.length}`;
-    th.appendChild(newHeader);
+    newHeader.textContent = `Tank No. ${thRow.children.length}`;
+    thRow.appendChild(newHeader);
+
+    // Handle only tbody sections with the class 'tank-section'
+    const tbodySections = table.querySelectorAll(".tank-section");
+    tbodySections.forEach(tbody => {
+        const rows = tbody.querySelectorAll("tr");
+        rows.forEach(row => {
+            // Add new cells only to rows with <td> elements (data rows)
+            const lastCell = row.querySelector("td"); // Check if the row has data cells
+            if (lastCell) {
+                const newCell = document.createElement("td");
+                newCell.innerHTML = `<input type="text" class="form-control">`;
+                row.appendChild(newCell);
+            }
+        });
+    });
 
     // Scroll to the newly created column (last column)
     const tableWrapper = document.querySelector(".table-wrapper");
-    const lastColumnIndex = th.children.length - 1; // Last column index
-    const lastColumn = table.querySelectorAll("th")[lastColumnIndex];
-    const columnPosition = lastColumn.offsetLeft;
-
-    // Scroll the table wrapper to show the new column
-    tableWrapper.scrollLeft = columnPosition;
+    tableWrapper.scrollLeft = table.scrollWidth;
 
     console.log("New column added.");
-  }
+}
+
+
+
 
 
 

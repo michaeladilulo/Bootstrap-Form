@@ -257,9 +257,11 @@ form {
 
   /* Table Wrapper with Overflow-X */
   .table-wrapper {
-    overflow-x: auto;
+    position: relative;
+    overflow: auto; /* Ensure the table scrolls without overlap */
+    z-index: 1; /* Set z-index appropriately */
     width: 100%;
-  }
+}
 
   table {
     border-collapse: collapse;
@@ -317,3 +319,8 @@ form {
   .add-column-btn:hover {
     background-color: #0056b3;
   }
+
+  .pipe-material-helper-tool[data-tooltip] {
+    position: relative; /* Required for proper z-index application */
+    z-index: 101 !important; /* Adjust as needed */
+}
